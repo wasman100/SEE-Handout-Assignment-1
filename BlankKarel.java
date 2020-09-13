@@ -31,7 +31,7 @@ public class BlankKarel extends SuperKarel {
 		// TODO Auto-generated method stub
 
 		topOfBallet();
-		System.out.println("top of ballot finishes");
+		
 		goDownBallet();
 	}
 
@@ -49,7 +49,10 @@ public class BlankKarel extends SuperKarel {
 			}
 			move();
 		}
-		if(i == 2 || i==0) {
+		if(beepersPresent()) {
+			i++;
+		}
+		if(i == 3 || i==0) {
 			while(notFacingNorth()) {
 				turnLeft();
 			}
