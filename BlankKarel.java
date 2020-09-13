@@ -55,9 +55,7 @@ public class BlankKarel extends SuperKarel {
 			}
 			move();
 		}else {
-			System.out.println("pickup starts");
 			startPickUp();
-			System.out.println("pickup ends");
 		}
 
 	}
@@ -73,6 +71,13 @@ public class BlankKarel extends SuperKarel {
 			}
 			move();
 		}
+		while(beepersPresent()) {
+			pickBeeper();
+		}
+		while(notFacingSouth()) {
+			turnLeft();
+		}
+		move();
 	}
 
 	private void topOfBallet() {
