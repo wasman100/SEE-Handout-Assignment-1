@@ -29,10 +29,37 @@ public class BlankKarel extends SuperKarel {
 
 	private void CheckBallet() {
 		// TODO Auto-generated method stub
-
-		topOfBallet();
 		
-		goDownBallet();
+		if(beepersPresent()) {
+			topOfBallet();
+			while(notFacingSouth()) {
+				turnLeft();
+			}
+			for(int space=0; space<2; space++) {
+				while(beepersPresent()) {
+					pickBeeper();
+				}
+				putBeeper();
+
+				move();
+			}
+			while(beepersPresent()) {
+				pickBeeper();
+			}
+			putBeeper();
+			
+			while(notFacingNorth()) {
+				turnLeft();
+			}
+			move();
+		
+		}
+		else {
+			topOfBallet();
+			
+			goDownBallet();
+		}
+
 	}
 
 	private void goDownBallet() {
