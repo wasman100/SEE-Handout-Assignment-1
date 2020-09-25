@@ -31,34 +31,15 @@ public class BlankKarel extends SuperKarel {
 		// TODO Auto-generated method stub
 		
 		if(beepersPresent()) {
-			topOfBallet();
-			while(notFacingSouth()) {
-				turnLeft();
-			}
-			for(int space=0; space<2; space++) {
-				while(beepersPresent()) {
-					pickBeeper();
-				}
-				putBeeper();
-
-				move();
-			}
-			while(beepersPresent()) {
-				pickBeeper();
-			}
-			putBeeper();
 			
-			while(notFacingNorth()) {
-				turnLeft();
-			}
-			move();
-		
 		}
-		else {
+		else{
 			topOfBallet();
-			
 			goDownBallet();
 		}
+			
+
+
 
 	}
 
