@@ -34,8 +34,12 @@ public class BlankKarel extends SuperKarel {
 			
 		}
 		else{
-			topOfBallet();
-			goDownBallet();
+			while(notFacingSouth())
+			{
+				turnLeft();
+			}
+			move();
+			startPickUp();
 		}
 			
 
@@ -43,33 +47,7 @@ public class BlankKarel extends SuperKarel {
 
 	}
 
-	private void goDownBallet() {
-		// TODO Auto-generated method stub
-		int i =0;
-		while(notFacingSouth()) {
-			turnLeft();
-		}
-		
-		
-		while(frontIsClear()) {
-			if(beepersPresent()) {
-				i++;
-			}
-			move();
-		}
-		if(beepersPresent()) {
-			i++;
-		}
-		if(i == 3 || i==0) {
-			while(notFacingNorth()) {
-				turnLeft();
-			}
-			move();
-		}else {
-			startPickUp();
-		}
-
-	}
+	
 
 	private void startPickUp() {
 		// TODO Auto-generated method stub
@@ -91,15 +69,6 @@ public class BlankKarel extends SuperKarel {
 		move();
 	}
 
-	private void topOfBallet() {
-		// TODO Auto-generated method stub
-		while(notFacingNorth()) {
-			turnLeft();
-		}
-		while(frontIsClear()) {
-			move();
-			
-		}
-	}
+	
 }
 
